@@ -1,44 +1,34 @@
 package joshs.coinflip;
 
-import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.control.Label;
+import javafx.geometry.Pos;
+import javafx.geometry.Insets;
+import javafx.scene.control.Button;
+import javafx.event.EventHandler;
+import javafx.event.ActionEvent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
-public class App extends Application
+public class BuildCoinFlip 
 {
-    public static void main(String[] args)
-    {
-        launch(args);
-    }
-    @Override
-    public void start(Stage stage)
-    {
-        BuildCoinFlip build = new BuildCoinFlip();
-    }
-}
-
-
-
-
-
-/*package joshs.coinflip;
-
-import javafx.application.Application;
-import javafx.stage.Stage;
-
-
-public class App extends Application 
-{       
     private Button flipCoin;
     private Label resultLabel;
     private Image tailsImage,  headsImage;
     private ImageView viewResultImage;
-   
-    @Override
-    public void start(Stage mainStage) 
-    {   
+    private Stage mainStage;
+    private Scene mainScene;
+    
+    public BuildCoinFlip()
+    {
+       
         flipCoin = new Button("Flip Coin");
         resultLabel = new Label();
         flipCoin.setOnAction(new CoinFlipButtonHandler());
+        mainStage = new Stage();
         
         headsImage = new Image("file:C:\\Users\\joshs\\Documents\\NetBeansProjects\\CoinFlip\\images\\Heads.jpg");
         tailsImage = new Image("file:C:\\Users\\joshs\\Documents\\NetBeansProjects\\CoinFlip\\images\\Tails.jpg");
@@ -60,12 +50,13 @@ public class App extends Application
         vbox.setPadding(new Insets(5));
         vbox.setAlignment(Pos.CENTER);
         
-        Scene mainScene = new Scene(vbox);
+        mainScene = new Scene(vbox);
         mainStage.setScene(mainScene);
         mainStage.setTitle("Coin Flip App");
-        mainStage.show();
+        mainStage.show(); 
     }
-    public class CoinFlipButtonHandler implements EventHandler<ActionEvent>
+    
+    private class CoinFlipButtonHandler implements EventHandler<ActionEvent>
     {
         @Override
         public void handle(ActionEvent event)
@@ -88,4 +79,4 @@ public class App extends Application
             }
         }
     }
-}*/
+}
