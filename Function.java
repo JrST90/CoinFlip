@@ -3,10 +3,6 @@ package joshs.coinflip;
 
 import java.util.Random;
 
-/**
- *
- * @author joshs
- */
 public class Function 
 {
     public static int coinFlip()
